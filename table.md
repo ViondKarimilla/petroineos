@@ -9,7 +9,7 @@ CREATE TABLE energy_supply_quarterly (
   event_timestamp TIMESTAMP
 )
 USING ICEBERG
-PARTITIONED BY (years(event_date), event_quarter);
+PARTITIONED BY (years(event_date), event_quarter)
 TBLPROPERTIES (
   'format-version' = '2',
   'write.delete.mode' = 'merge-on-read',
@@ -17,7 +17,7 @@ TBLPROPERTIES (
   'write.merge.mode' = 'merge-on-read',
   'write.target-file-size-bytes' = '536870912',
   'read.split.target-size' = '134217728'
-)
+);
 
 
 
@@ -34,4 +34,5 @@ AND t.series_name = s.series_name
 WHEN MATCHED AND s.event_timestamp > t.event_timestamp THEN
   UPDATE SET *
 WHEN NOT MATCHED THEN
+
   INSERT *
