@@ -20,19 +20,16 @@ Dataset:
 Supply and use of crude oil, natural gas liquids and feedstocks (ET 3.1 – quarterly)
 
 Project Structure
-project/
-│
-├── requirement.txt        # install Dependencies 
-├── petroineos.py          # Main pipeline script
-│── petroineos_dq.py       # DQ pipeline script
-├── README.md              # Project documentation
-├── output/                # Generated outputs
-│   ├── ET_3_1.xlsx        # Downloaded Excel file
-│   └── debug_cleaned_data.csv
-│   └── energy_supply_quarterly_YYYYMMDD.csv
-│   └── quality_report_20260108_114137.txt
-└── venv/                  # Python virtual environment (optional)
-
+petroineos/
+├── petroineos.py
+├── petroineos_dq.py
+├── requirement.txt
+├── tests/
+│   ├── __init__.py
+│   └── test_petroineos.py
+├── output/
+├── README.md
+└── .gitignore
 
 Prerequisites
 1)Python 3.9+(Python 3.14.2 which I used)
@@ -145,5 +142,6 @@ The pipeline fails fast when:
 . The Quarter sheet is missing
 . Data quality checks fail
 This ensures bad data is never silently propagated.
+
 
 
