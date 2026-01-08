@@ -22,6 +22,7 @@ Supply and use of crude oil, natural gas liquids and feedstocks (ET 3.1 – quar
 Project Structure
 project/
 │
+├── requirement.txt        # install Dependencies 
 ├── petroineos.py          # Main pipeline script
 │── petroineos_dq.py       # DQ pipeline script
 ├── README.md              # Project documentation
@@ -144,4 +145,5 @@ The pipeline fails fast when:
 . The Quarter sheet is missing
 . Data quality checks fail
 This ensures bad data is never silently propagated.
+
 
